@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "node_modules/.bin/karma start",
-    "build": "mkdir -p ./dist && node_modules/.bin/browserify ./index.js -s o9n -o ./dist/o9n.js"
+    "build": "mkdir -p ./dist && node_modules/.bin/browserify ./index.js -s o9n -o ./dist/o9n.js && node_modules/.bin/uglifyjs ./dist/o9n.js -o ./dist/o9n.min.js"
   },
   "testling": {
     "browsers": [
@@ -23,6 +23,7 @@
   "license": "MIT",
   "devDependencies": {
     "browserify": "^11.2.0",
+    "uglify-js": "^3.1.3",
     "karma": "^0.13.10",
     "karma-browserify": "^4.4.0",
     "karma-chrome-launcher": "^2.2.0",
@@ -32,6 +33,5 @@
     "karma-tape-reporter": "^1.0.3",
     "tape": "^4.2.1"
   },
-  "dependencies": {},
   "repository": "https://github.com/chmanie/o9n.git"
 }
